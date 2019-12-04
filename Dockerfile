@@ -4,7 +4,7 @@ FROM python:3.8-alpine
 RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
 
 WORKDIR /usr/app
-CMD gunicorn -b 0.0.0.0:3000 -w 4 "server:start_app()" --reload
+CMD gunicorn -b 0.0.0.0:3000 -w 4 "server:create_app()" --reload
 EXPOSE 3000
 
 COPY requirements.txt /usr/app
