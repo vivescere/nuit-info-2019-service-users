@@ -18,9 +18,11 @@ def index():
 def get_users():
   return jsonify({'test': True})
 
-def start_app():
+# Called by gunicorn
+def create_app():
   db.create_all()
-  app.run(port=3000)
+  return app
 
 if __name__ == '__main__':
-  start_app()
+  app = start_app()
+  app.run(port=3000)
