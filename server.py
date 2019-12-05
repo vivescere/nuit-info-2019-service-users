@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://docker:docker@postgres/users'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://pg-user:pg-password@postgres/srv_users'
 db = SQLAlchemy(app)
 
 class User(db.Model):
